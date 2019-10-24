@@ -22,7 +22,8 @@ export default function App() {
 
   return (
     <>
-      <h1>Big Basin Valley Lift Status</h1>
+      <h1>Big Basin Valley Visitor Center</h1>
+      <h2>Area Lift Status</h2>
       <section>
         <h2>Snowtooth Lift Status</h2>
         {data && !loading && (
