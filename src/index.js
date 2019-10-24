@@ -34,7 +34,7 @@ const cache = new InMemoryCache();
 const client = new ApolloClient({
   link,
   cache,
-  name: "big-basin-visitors-app",
+  name: "big-basin-avalanche-center",
   version: "2"
 });
 
