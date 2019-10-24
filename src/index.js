@@ -34,7 +34,7 @@ const cache = new InMemoryCache();
 const client = new ApolloClient({
   link,
   cache,
-  name: "send-it-app",
+  name: "big-basin-visitors-app",
   version: "2"
 });
 

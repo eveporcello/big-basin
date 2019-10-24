@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Willow Edge",
+    "status": "HOLD",
+    "capacity": 3
+  },
+  {
+    "name": "Golden Glance",
+    "status": "OPEN",
+    "capacity": 4
+  },
+  {
+    "name": "Blackjack",
+    "status": "CLOSED",
+    "capacity": 2
+  },
+  {
+    "name": "Powderhound",
+    "status": "OPEN",
+    "capacity": 6
+  },
+  {
+    "name": "Snowqueen",
+    "status": "OPEN",
+    "capacity": 4
+  },
+  {
+    "name": "Jack Frost",
+    "status": "CLOSED",
+    "capacity": 6
+  },
+  {
+    "name": "Jaguar Jolt",
+    "status": "OPEN",
+    "capacity": 4
+  },
+  {
+    "name": "Dawn Wall",
+    "status": "HOLD",
+    "capacity": 4
+  }
+]
