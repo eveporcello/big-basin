@@ -27,6 +27,20 @@ const QUERY = gql`
               trailAccess {
                 name
                 id
+                accessedByLifts {
+                  capacity
+                  trailAccess {
+                    difficulty
+                    name
+                    accessedByLifts {
+                      name
+                      elevationGain
+                      trailAccess {
+                        name
+                      }
+                    }
+                  }
+                }
               }
             }
           }
