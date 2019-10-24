@@ -5,12 +5,33 @@ import { useQuery } from "@apollo/react-hooks";
 import sunLifts from "./sunLifts";
 
 const QUERY = gql`
-  query {
+  query BigBasinQuery {
     allLifts {
       id
       name
       status
       capacity
+      trailAccess {
+        name
+        status
+        accessedByLifts {
+          name
+          night
+          trailAccess {
+            name
+            groomed
+            accessedByLifts {
+              name
+              capacity
+              elevationGain
+              trailAccess {
+                name
+                id
+              }
+            }
+          }
+        }
+      }
     }
   }
 `;
