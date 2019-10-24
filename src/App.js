@@ -1,7 +1,7 @@
 import React from "react";
 import gql from "graphql-tag";
 import { StatusIndicator } from "./StatusIndicator";
-import { useQuery, useMutation, useSubscription } from "@apollo/react-hooks";
+import { useQuery } from "@apollo/react-hooks";
 
 const QUERY = gql`
   query {
@@ -10,37 +10,12 @@ const QUERY = gql`
       name
       status
       capacity
-      trailAccess {
-        id
-        name
-      }
-    }
-  }
-`;
-
-const MUTATION = gql`
-  mutation SetLiftStatus($id: ID!, $status: LiftStatus!) {
-    setLiftStatus(id: $id, status: $status) {
-      id
-      name
-      status
-    }
-  }
-`;
-
-const SUBSCRIPTION = gql`
-  subscription {
-    liftStatusChange {
-      id
-      status
     }
   }
 `;
 
 export default function App() {
   const { loading, data } = useQuery(QUERY);
-  const [setStatus] = useMutation(MUTATION);
-  useSubscription(SUBSCRIPTION);
 
   if (loading) return <p>loading lifts</p>;
 
@@ -54,6 +29,7 @@ export default function App() {
             <tr>
               <th>Lift Name</th>
               <th>Current Status</th>
+              <th>Capacity</th>
             </tr>
           </thead>
           <tbody>
@@ -61,18 +37,9 @@ export default function App() {
               <tr key={lift.id}>
                 <td>{lift.name}</td>
                 <td>
-                  <StatusIndicator
-                    status={lift.status}
-                    onChange={status =>
-                      setStatus({
-                        variables: {
-                          id: lift.id,
-                          status
-                        }
-                      })
-                    }
-                  />
+                  <StatusIndicator status={lift.status} />
                 </td>
+                <td>{lift.capacity}</td>
               </tr>
             ))}
           </tbody>

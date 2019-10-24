@@ -34,8 +34,8 @@ const cache = new InMemoryCache();
 const client = new ApolloClient({
   link,
   cache,
-  name: "lift-manager-web",
-  version: "1"
+  name: "send-it-app",
+  version: "2"
 });
 
 render(
