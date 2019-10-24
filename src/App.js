@@ -1,6 +1,5 @@
 import React from "react";
 import gql from "graphql-tag";
-import { StatusIndicator } from "./StatusIndicator";
 import { useQuery } from "@apollo/react-hooks";
 import sunLifts from "./sunLifts";
 
@@ -47,9 +46,7 @@ export default function App() {
               {data.allLifts.map(lift => (
                 <tr key={lift.id}>
                   <td>{lift.name}</td>
-                  <td>
-                    <StatusIndicator status={lift.status} />
-                  </td>
+                  <td>{lift.status}</td>
                   <td>{lift.capacity}</td>
                 </tr>
               ))}
@@ -71,9 +68,7 @@ export default function App() {
             {sunLifts.map(lift => (
               <tr key={lift.id}>
                 <td>{lift.name}</td>
-                <td>
-                  <StatusIndicator status={lift.status} />
-                </td>
+                <td>{lift.status}</td>
                 <td>{lift.capacity}</td>
               </tr>
             ))}
