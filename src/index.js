@@ -31,7 +31,12 @@ const link = split(
 );
 
 const cache = new InMemoryCache();
-const client = new ApolloClient({ link, cache });
+const client = new ApolloClient({
+  link,
+  cache,
+  name: "lift-manager-web",
+  version: "1"
+});
 
 render(
   <ApolloProvider client={client}>
